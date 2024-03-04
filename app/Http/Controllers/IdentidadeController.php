@@ -45,8 +45,8 @@ class IdentidadeController extends Controller
     
     public function dadusDatabase(): Response 
     {
-        $dadus = DB::query('select * from identidade');
+        $dadus = DB::table('identidade')->get(); // Fo sai database tomak
 
-        return response()->view('/dashboard', $dadus);
+        return response()->view('admin.dashboard', ['dadus' => $dadus]);
     }
 }

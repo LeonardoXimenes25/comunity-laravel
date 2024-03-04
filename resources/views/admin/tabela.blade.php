@@ -19,8 +19,9 @@
                                 <!-- Header husi tabela -->
                                 <thead>
                                     <tr>
-                                        <th>Numeru</th>
+                                        <th>Numera</th>
                                         <th>Naran</th>
+                                        <th>Tinan</th>
                                         <th>Hela Fatin</th>
                                         <th>Asaun</th>
                                     </tr>
@@ -28,12 +29,13 @@
                             @endif
                             <tbody>
                                 <!-- Looping index array ba dadus hodi fo sai dadus -->
-                                @foreach ($dadus as $item => $value)
+                                @foreach ($dadus as $pessoal)
                                     <tr>
-                                        <td>{{ $item += 1 }}</td>
-                                        <td>{{ $value['naran'] }}</td>
-                                        <td>{{ $value['hela_fatin'] }}</td>
-                                        <td><a href="/edit">Edit</a> | <a href="#">Apaga</a></td>
+                                        <td>{{ $pessoal->id }}</td>
+                                        <td>{{ $pessoal->naran }}</td>
+                                        <td>{{ $pessoal->tinan }}</td>
+                                        <td>{{ $pessoal->hela_fatin }}</td>
+                                        <td><a href="/edit" class="btn btn-dark">Edit</a> | <a href="#" class="btn btn-success">Apaga</a></td>
                                     </tr>
                                 @endforeach
 

@@ -23,16 +23,16 @@ Route::get('/', function () {
     return view('par_impar');
 });
 
-Route::post('/', [par_impar::class, 'check']);
-Auth::routes();
+// Route::post('/', [par_impar::class, 'check']);
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// //route tabela
+// Route::get('/tabela', [IdentidadeController::class, 'dadus']);
+
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//route tabela
-Route::get('/tabela', [IdentidadeController::class, 'dadus']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/dashboard', [IdentidadeController::class,'']);
+Route::get('/dashboard', [IdentidadeController::class,'dadusDatabase']);

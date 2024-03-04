@@ -1,4 +1,6 @@
 @extends('base')
+@extends('layouts.app')
+
 
 @section('titulu')
     Dashboard
