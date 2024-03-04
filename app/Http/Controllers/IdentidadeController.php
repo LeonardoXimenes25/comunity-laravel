@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class IdentidadeController extends Controller
 {
+    
+    // static function
     function dadus(){
 
         return view('table', [
@@ -34,5 +39,14 @@ class IdentidadeController extends Controller
                     ]
                 ]]
                 );
+    }
+    // end static function
+
+    
+    public function dadusDatabase(): Response 
+    {
+        $dadus = DB::query('select * from identidade');
+
+        return response()->view('/dashboard', $dadus);
     }
 }
